@@ -1,0 +1,8 @@
+
+Si un objeto tiene que cumplir ciertos requisitos para ser considerado válido. Por ejemplo, CombinacionPropuesta: requiere colores válidos, no repetidos y una cantidad concreta de ellos...
+
+La responsabilidad, y por tanto, toda la lógica para asegurarse de llamar correctamente al constructor de CombinacionPropuesta ¿debe recaer sobre el objeto que la construye?
+
+Parece más natural que sea la propia CombiancionPropuesta la que sepa si es o no válida y centralizar esa información.
+
+En este caso, a falta de algún patrón que lo resuelva, ¿estaría justificado usar un método estático público en CombinacionPropuesta que valore si ciertos parámetros darían un objeto válido?
