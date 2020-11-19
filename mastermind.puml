@@ -1,6 +1,6 @@
-@startuml Mastermind_PublicView_v1_0_0
+@startuml Mastermind_PublicView_v2_0_0
 
-title Mastermind_PublicView v1.0.0
+title Mastermind_PublicView v2.0.0
 
 note as N1
   <b>instanceOf(team)</b>
@@ -47,19 +47,18 @@ enum Color{
 }
 
 abstract class Combination{
-    +{static} isValid(string) : bool
-    +{static} getErrors(string) : string
     +toString() : string
 }
 
 class SecretCombination{
     +SecretCombination()
-    +evalueCombination(proposed) : Result
+    +evalueCombination(ProposedCombination) : Result
     +toString() : string
 }
 
 class ProposedCombination{
-    +ProposedCombination(proposed: string)
+    +ProposedCombination()
+    +read(): void
 }
 
 class Console{
@@ -82,5 +81,6 @@ Attempt ..> SecretCombination
 
 Mastermind ..> Console
 Attempt ..> Console
+ProposedCombination ..> Console
 
 @enduml
