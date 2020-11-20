@@ -1,6 +1,6 @@
-@startuml Mastermind_PublicView_v3_0_0
+@startuml Mastermind_PublicView_v3_0_1
 
-title Mastermind_PublicView v3.0.0
+title Mastermind_PublicView v3.0.1
 
 note as N1
   <b>instanceOf(team)</b>
@@ -23,7 +23,6 @@ class Mastermind {
 class Attempt{
     +Attempt(SecretCombination)
     +isWinner() : bool
-    +toString() : string
 }
 
 
@@ -43,17 +42,14 @@ enum Color{
     +{static} getAvailableColors() : string
     +{static} getColorByChar(char) : Color
     +isSameColorAs(color : Color) : bool
-    +toString() : string
 }
 
 abstract class Combination{
-    +toString() : string
 }
 
 class SecretCombination{
     +SecretCombination()
     +evalueCombination(ProposedCombination) : Result
-    +toString() : string
 }
 
 class ProposedCombination{
@@ -66,10 +62,18 @@ class Console{
     +read(promptMessage : string) : string
 }
 
+Class Message {
+    +showAttents(Attemt [])
+    +showError(ProposedCombination)
+    +showResume()
+    +showWinner()
+}
+
 
 
 Mastermind *--> SecretCombination
 Mastermind *--> "0..10" Attempt
+Mastermind *-down-> Message
 
 Combination ^-- SecretCombination
 Combination ^-- ProposedCombination
@@ -79,7 +83,9 @@ Attempt *--> ProposedCombination
 Attempt *--> Result
 Attempt ..> SecretCombination
 
-Mastermind ..> Console
-ProposedCombination ..> Console
+Attempt --> Message
+
+Message --> Console
+
 
 @enduml
