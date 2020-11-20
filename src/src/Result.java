@@ -1,16 +1,20 @@
 
 public class Result {
 	
+	private int blacks;
+	private int whites;
+	
 	Result(int whites, int blacks) {
-		
+		this.blacks = blacks;
+        this.whites = whites;
 	}
 	
 	public int getWhites() {
-		return 0;
+		return whites;
 	}
 	
 	public int getBlacks() {
-		return 0;
+		return blacks;
 	}
 
 }
