@@ -1,7 +1,7 @@
 
 class ProposedCombination extends Combination {
 
-	ProposedCombination() {}
+	public ProposedCombination() {}
 	
 	public void read() {
 		
