@@ -1,8 +1,18 @@
 
 class SecretCombination extends Combination {
 
+		
+	private static final int LENGTH = 4;
+	
+
 	public SecretCombination() {
-		super(generateRandomString());
+
+		this.colors = new Color[LENGTH];
+		var combination = this.generateRandomString();
+		
+		for(int i=0; i<LENGTH; i++){
+			this.colors[i] = Color.getColorByChar(combination.charAt(i));
+		}
 	}
 	
 	public Result evalueCombination(ProposedCombination proposedCombination) {
@@ -33,7 +43,7 @@ class SecretCombination extends Combination {
 		return result;
 	}
 
-	private static String generateRandomString() {
+	private String generateRandomString() {
 
 		String result = "";
 		String availableColors = Color.getAvailableColors();
@@ -48,7 +58,7 @@ class SecretCombination extends Combination {
 	    return result;
 	}
 	
-	private static int randomIndex(int arrayLenght) {
+	private int randomIndex(int arrayLenght) {
 		return (int)(Math.random() * arrayLenght);
 	}
 
