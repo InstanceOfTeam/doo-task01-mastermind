@@ -7,26 +7,47 @@ public enum Color {
 	YELLOW('y'),
 	ORANGE('o'),
 	PINK('p');
+	
+	private final char colorLetter;
 
-	Color(char c) {
-		
+	private Color(char colorLetter) {
+		this.colorLetter = colorLetter;
 	}
 
 	public static String getAvailableColors() {
-		return null;
+		
+		String availableColors = "";
+		
+		for (Color color: Color.values()) {
+			availableColors+= color.toString();
+		}
+		
+		return availableColors;
 	}
 	
-	public static Color getColorByChar(char charColor) {
+	public static Color getColorByChar(char colorLetter) {
+		
+		String textColor = String.valueOf(colorLetter);
+		
+		for (Color color: Color.values()) {
+			
+			String  currentTextColor= color.toString();
+			if (currentTextColor.equals(textColor)) {
+				return color;
+			}
+		}
+		
 		return null;
+		
 	}
 	
 	public boolean isSameColorAs(Color color) {
-		return false;
+		return this == color;
 	}
 	
 	@Override
 	public String toString() {
-		return null;
+		return String.valueOf(this.colorLetter);
 	}
 
 }
