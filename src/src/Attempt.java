@@ -5,6 +5,7 @@ class Attempt {
 
 	public Attempt(SecretCombination secretCombination) {
 		this.proposedCombination = new ProposedCombination();
+		this.proposedCombination.read();
 		this.result = secretCombination.evalueCombination(this.proposedCombination);
 	}
 
