@@ -3,19 +3,15 @@ import java.util.Set;
 
 class ProposedCombination extends Combination {
 
-	public ProposedCombination(){
-        this.colors = new Color[LENGTH];
-    }
-
     public void read() {
         String proposedString;
 		do {
 			proposedString=new Console().read("Propose a combination: ");
         }while(!this.isValid(proposedString));
-		CreateCombination(proposedString);
+		createCombination(proposedString);
     }
 
-    private void CreateCombination(String combinationString){
+    private void createCombination(String combinationString){
         for (int i=0;i<LENGTH;i++) {
 			this.colors[i]=Color.getColorByChar(combinationString.charAt(i));
 		}
@@ -68,9 +64,4 @@ class ProposedCombination extends Combination {
         return false;
     }
 
-    public static void main( String[] args ){
-        ProposedCombination proposedCombination=new ProposedCombination();
-        proposedCombination.read();
-        new Console().write("proposedCombination: "+proposedCombination.toString()+"\n");
-    }
 }
