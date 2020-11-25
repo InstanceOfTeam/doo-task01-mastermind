@@ -30,7 +30,7 @@ class SecretCombination extends Combination {
 			}
 		}
 
-        return new Result(blacks, whites);
+        return new Result(whites, blacks);
 	}
 	
 	@Override
