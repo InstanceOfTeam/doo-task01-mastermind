@@ -15,15 +15,4 @@ abstract class Combination {
 		}
 		return textColors;
 	}
-
-	public static void main(String[] args) {
-		ProposedCombination ps = new ProposedCombination();
-		Color[] c = Color.values();
-
-		for (int i = 0; i < ps.colors.length; i++) {
-			ps.colors[i] = c[(int) Math.floor(Math.random()*4)];
-		}
-
-		System.out.println(ps.toString());
-	}
 }
