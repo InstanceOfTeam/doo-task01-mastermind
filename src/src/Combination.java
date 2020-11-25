@@ -1,6 +1,5 @@
 
 abstract class Combination {
-
 	protected final int LENGTH = 4;
 	protected Color[] colors;
 
@@ -11,12 +10,9 @@ abstract class Combination {
 	@Override
 	public String toString() {
 		String textColors = "";
-		
-		for (int i=0; i < colors.length; i++) {
-			textColors+=colors[i].toString();
+		for (Color color : this.colors) {
+			textColors = textColors.concat(color.toString());
 		}
-		
 		return textColors;
 	}
-
 }
