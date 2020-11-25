@@ -1,18 +1,23 @@
 
 class Attempt {
+	private ProposedCombination proposedCombination;
+	private Result result;
 
 	public Attempt(SecretCombination secretCombination) {
-		// TODO Auto-generated constructor stub
+		this.proposedCombination = new ProposedCombination();
+		this.proposedCombination.read();
+		this.result = secretCombination.evalueCombination(this.proposedCombination);
 	}
 
 	public boolean isWinner() {
-		// TODO Auto-generated method stub
+		if (this.result.getBlacks() == 4) {
+			return true;
+		}
 		return false;
 	}
-	
+
 	@Override
 	public String toString() {
-		return null;
+		return this.proposedCombination.toString();
 	}
-
 }
