@@ -4,7 +4,7 @@ class Mastermind {
 	private ArrayList<Attempt> attempts = new ArrayList<Attempt>();
 	private SecretCombination secretCombination;
 	private final int NUM_ATTEMPS = 10;
-	private Object writeConsole;
+	
 	
 
 	public Mastermind() {
