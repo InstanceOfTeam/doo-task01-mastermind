@@ -18,6 +18,8 @@ class Attempt {
 
 	@Override
 	public String toString() {
-		return this.proposedCombination.toString();
+		return this.proposedCombination.toString() +
+			" --> " + this.result.getBlacks() + "blacks and" +
+			this.result.getWhites() + " whites";
 	}
 }
