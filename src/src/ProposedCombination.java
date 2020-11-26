@@ -10,6 +10,10 @@ class ProposedCombination extends Combination {
         }while(!this.isValid(proposedString));
 		createCombination(proposedString);
     }
+    
+    public Color[] getColors() {
+    	return this.colors;
+    }
 
     private void createCombination(String combinationString){
         for (int i=0;i<LENGTH;i++) {

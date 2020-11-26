@@ -18,10 +18,12 @@ class SecretCombination extends Combination {
 	public Result evalueCombination(ProposedCombination proposedCombination) {
 		int blacks = 0;
 		int whites = 0;
+		
+		Color[] proposedColors = proposedCombination.getColors();
 
 		for(int p = 0; p < LENGTH; p++) {
 			for(int c = 0; c < LENGTH; c++) {
-				if(proposedCombination.colors[p].isSameColorAs(this.colors[c])){
+				if(proposedColors[p].isSameColorAs(this.colors[c])){
 					if(p == c)
 						blacks ++;
 					else
@@ -29,7 +31,7 @@ class SecretCombination extends Combination {
 				}
 			}
 		}
-
+		
         return new Result(whites, blacks);
 	}
 	
